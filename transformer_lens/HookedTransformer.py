@@ -984,7 +984,7 @@ class HookedTransformer(HookedRootModule):
         indices = torch.arange(len(tokens), device=tokens.device)[
             tokens == single_token
         ]
-        assert len(indices) > 0, f"The token {single_token} does not occur in the prompt"
+        assert len(indices) > 0, "The token does not occur in the prompt"
         if mode == "first":
             return indices[0].item()
         elif mode == "last":
